@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Calendar Management">
+  <defs>
+    <linearGradient id="background" x1="80" y1="36" x2="432" y2="476" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1769d8"/>
+      <stop offset="1" stop-color="#0b408f"/>
+    </linearGradient>
+    <linearGradient id="card" x1="112" y1="126" x2="392" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <rect x="96" y="116" width="320" height="288" rx="40" fill="url(#card)"/>
+  <path d="M96 176c0-22.091 17.909-40 40-40h240c22.091 0 40 17.909 40 40v24H96v-24z" fill="#17416f"/>
+  <circle cx="348" cy="152" r="15" fill="#7dd3fc"/>
+  <circle cx="296" cy="152" r="15" fill="#bae6fd"/>
+  <rect x="126" y="228" width="68" height="15" rx="7.5" fill="#93a7bd"/>
+  <rect x="222" y="228" width="68" height="15" rx="7.5" fill="#93a7bd"/>
+  <rect x="318" y="228" width="68" height="15" rx="7.5" fill="#93a7bd"/>
+  <rect x="126" y="276" width="68" height="15" rx="7.5" fill="#93a7bd"/>
+  <rect x="222" y="276" width="68" height="15" rx="7.5" fill="#93a7bd"/>
+  <rect x="318" y="276" width="68" height="15" rx="7.5" fill="#93a7bd"/>
+  <path d="M318 363.5c-4.22 0-8.438-1.66-11.62-4.97l-24.5-25.5c-6.25-6.5-5.875-16.875 1-22 6.375-4.75 15.62-3.875 21 2.25l13.87 14.5 35.5-38.75c5.5-6 15.13-6.25 21-.75 5.875 5.625 6 15.25.375 21.125l-47.25 50c-2.875 3-6.875 4.47-11.375 4.22z" fill="#178a52"/>
+  <path d="M157.75 337h65c4.125 0 7.5 3.375 7.5 7.5s-3.375 7.5-7.5 7.5h-65c-4.125 0-7.5-3.375-7.5-7.5s3.375-7.5 7.5-7.5z" fill="#17416f"/>
+</svg>
