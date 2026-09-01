@@ -44,3 +44,51 @@ Sau đó mở URL app từ Shopify admin trên store kiểm thử, chạy chính
 - Web app không dùng backend/đăng nhập riêng và dữ liệu chỉ nằm trong `localStorage`, vì vậy hiện tại phù hợp làm embedded utility demo trên một store hơn là app public đa merchant.
 - Chưa có asset marketing và nội dung listing bắt buộc của Shopify App Store.
 - Logo chuẩn bị tại `public/icons/app-icon.svg`; Shopify Partner Dashboard vẫn yêu cầu upload icon raster đúng định dạng danh mục hiện hành.
+
+## Checklist tự xác nhận trên Shopify
+
+### 1. Product Owner / Partner account
+
+- [ ] Đăng nhập Shopify Partner Dashboard bằng tài khoản chủ sở hữu app.
+- [ ] Xác nhận app `Calendar Management` đúng organization và không dùng app demo `commercial-upside-app`.
+- [ ] Xác nhận app có quyền truy cập development store dùng để test.
+
+### 2. Public URL configuration
+
+- [ ] Thay URL tạm `trycloudflare.com` trong `shopify.app.calendar-management.toml` bằng URL Cloudflare Pages chính thức.
+- [ ] Nhập cùng URL đó vào `application_url` và `app_preferences.url`.
+- [ ] Xác nhận `/privacy` và `/support` mở công khai từ URL chính thức.
+- [ ] Không khai báo `redirect_urls` cho đến khi app có luồng xác thực riêng.
+
+### 3. Embedded installation test
+
+- [ ] Cài app vào development store.
+- [ ] Mở app từ Shopify admin và xác nhận nó hiển thị embedded.
+- [ ] Thêm/sửa/hoàn thành/xóa ít nhất một event, deadline, note.
+- [ ] Reload lại Shopify admin và xác nhận dữ liệu còn trong cùng trình duyệt.
+- [ ] Xóa dữ liệu trình duyệt và xác nhận UI hiển thị trạng thái trống.
+
+### 4. App listing
+
+- [ ] Xác nhận tên thương mại, tagline, mô tả ngắn, và mô tả chi tiết trong `docs/app-store-listing.md`.
+- [ ] Upload icon raster 512×512 xuất từ `public/icons/app-icon.svg`.
+- [ ] Upload screenshot dashboard ở light/dark và mobile/desktop.
+- [ ] Kiểm tra không cam kết sync đa thiết bị, backup, collaboration, hoặc tích hợp lịch ngoài.
+- [ ] Nhập danh mục, từ khóa, pricing, khu vực phục vụ, và thông tin liên hệ.
+
+### 5. Privacy and security
+
+- [ ] Xác nhận app không thu thập hay truyền Shopify merchant data.
+- [ ] Nhập Privacy Policy URL từ `/privacy`.
+- [ ] Nhập Support URL từ `/support`.
+- [ ] Xác nhận không lưu access token vào `localStorage`.
+- [ ] Hoàn thành các câu hỏi privacy/security review theo dữ liệu thực tế của app.
+
+### 6. Release gate
+
+- [ ] Xác nhận không dùng URL tunnel tạm ở bất kỳ cấu hình production nào.
+- [ ] Chạy `npm test` và `npm run build` trên commit cuối.
+- [ ] Chạy `npx shopify app build -c calendar-management`.
+- [ ] Chạy `npx shopify app deploy -c calendar-management` chỉ sau khi URL chính thức đã được cập nhật.
+- [ ] Kiểm tra toàn bộ luồng trong `docs/test-flows.md`.
+- [ ] Submit App Store review chỉ sau khi Supervisor xác nhận public URL, QA, build, và embedded test đều pass.

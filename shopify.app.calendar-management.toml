@@ -1,11 +1,9 @@
 # Calendar Management is an embedded, local-first app.
-# The application_url still points to a temporary Cloudflare tunnel and must be
-# replaced with the production HTTPS hosting domain before release.
 
 client_id = "0f25395dffd9e4cb946667e964fda31f"
-application_url = "https://bald-receptor-information-following.trycloudflare.com/"
-embedded = true
+application_url = "https://calendar-management-2.halinh280107.workers.dev"
 name = "Calendar Management"
+embedded = true
 
 [webhooks]
 api_version = "2026-07"
@@ -20,4 +18,4 @@ use_legacy_install_flow = false
 redirect_urls = [ ]
 
 [app_preferences]
-url = "https://bald-receptor-information-following.trycloudflare.com/"
+url = "https://calendar-management-2.halinh280107.workers.dev"
