@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-09-01T12:58:59.336Z",
+  "baseUrl": "https://calendar-management-2.halinh280107.workers.dev",
+  "icon": "marketing/app-icon-512.png",
+  "screenshots": [
+    "marketing/screenshots/dashboard-light-mobile.png",
+    "marketing/screenshots/dashboard-dark-mobile.png",
+    "marketing/screenshots/dashboard-light-desktop.png",
+    "marketing/screenshots/dashboard-dark-desktop.png"
+  ]
+}

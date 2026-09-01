@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
+    "assets": "node scripts/generate-store-assets.mjs",
     "test": "vitest run",
     "verify": "npm test && npm run build"
   },
@@ -27,6 +28,8 @@
     "@vitest/coverage-v8": "^4.0.17",
     "cloudflared": "^0.7.3",
     "jsdom": "^27.3.0",
+    "playwright": "^1.62.1",
+    "sharp": "^0.35.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.17",
     "wrangler": "^4.127.1"

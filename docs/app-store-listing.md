@@ -50,7 +50,18 @@ Support is provided through the public support URL configured in the Shopify lis
 
 ## Marketing asset policy
 
-- Icon: `public/icons/app-icon.svg` (square 512×512).
-- Maskable icon: same square asset, with all meaningful content inside the center 80% safe area.
-- Screenshots must show the dashboard in light and dark modes on mobile and desktop widths.
+- Icon: upload `marketing/app-icon-512.png` (512×512 PNG).
+- Screenshots: upload `marketing/screenshots/mobile-light.png`, `mobile-dark.png`, `desktop-light.png`, and `desktop-dark.png`.
+- Optional support evidence: `marketing/screenshots/privacy-light.png` shows the public privacy page.
 - Do not claim cross-device sync, collaboration, backup, or external calendar integration.
+
+## Privacy and security review answers
+
+- **Data collected:** No app data is collected by a server. Events, deadlines, and notes stay in the same browser's `localStorage`.
+- **Shopify data accessed:** No merchant resources, customer data, orders, products, or store data are read.
+- **Data transmission:** No app-record data is transmitted to a backend, database, analytics service, or third party.
+- **Credentials/tokens:** No credentials, access tokens, authorization codes, or session tokens are stored by the app.
+- **Cookies/trackers:** No cookies or analytics trackers are installed.
+- **Data deletion:** Users delete records in the app or clear the site's browser storage. Cleared storage is permanent because no server copy exists.
+- **Security controls:** The production app is served over HTTPS, React escapes stored text, and storage validation rejects malformed data.
+- **Known limitation:** Browser settings can block storage inside an iframe. If storage is unavailable, the app shows an explicit storage-unavailable state.

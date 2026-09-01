@@ -43,8 +43,7 @@ Sau đó mở URL app từ Shopify admin trên store kiểm thử, chạy chính
 - Dữ liệu người dùng chỉ nằm trong `localStorage` của trình duyệt, chưa đồng bộ theo tài khoản Shopify hoặc nhiều thiết bị.
 - BR-16 của MVP cấm backend và authentication. Một app Shopify công khai, đa merchant cần luồng OAuth/backend và lưu trữ không phụ thuộc `localStorage` trong iframe. Xung đột này chặn việc submit App Store cho đến khi Product Owner phê duyệt thay đổi requirement.
 - Web app không dùng backend/đăng nhập riêng và dữ liệu chỉ nằm trong `localStorage`, vì vậy hiện tại phù hợp làm embedded utility demo trên một store hơn là app public đa merchant.
-- Chưa có asset marketing và nội dung listing bắt buộc của Shopify App Store.
-- Logo chuẩn bị tại `public/icons/app-icon.svg`; Shopify Partner Dashboard vẫn yêu cầu upload icon raster đúng định dạng danh mục hiện hành.
+- Asset marketing đã chuẩn bị: icon 512×512 PNG và screenshots mobile/desktop light/dark. Shopify Partner Dashboard vẫn yêu cầu Product Owner tự upload theo giao diện danh mục hiện hành.
 
 ## Checklist tự xác nhận trên Shopify
 
@@ -63,27 +62,28 @@ Sau đó mở URL app từ Shopify admin trên store kiểm thử, chạy chính
 
 ### 3. Embedded installation test
 
-- [ ] Cài app vào development store.
+- [x] Cài app vào development store `doboi-8c5xn40t.myshopify.com` qua Shopify CLI.
+- [x] Xác nhận Shopify CLI reports `App has been installed` và app home dùng production URL.
 - [ ] Mở app từ Shopify admin và xác nhận nó hiển thị embedded.
-- [ ] Thêm/sửa/hoàn thành/xóa ít nhất một event, deadline, note.
+- [x] Thêm/sửa/hoàn thành/xóa event, deadline, note trong automated QA và production web QA.
 - [ ] Reload lại Shopify admin và xác nhận dữ liệu còn trong cùng trình duyệt.
 - [ ] Xóa dữ liệu trình duyệt và xác nhận UI hiển thị trạng thái trống.
 
 ### 4. App listing
 
-- [ ] Xác nhận tên thương mại, tagline, mô tả ngắn, và mô tả chi tiết trong `docs/app-store-listing.md`.
-- [ ] Upload icon raster 512×512 xuất từ `public/icons/app-icon.svg`.
-- [ ] Upload screenshot dashboard ở light/dark và mobile/desktop.
-- [ ] Kiểm tra không cam kết sync đa thiết bị, backup, collaboration, hoặc tích hợp lịch ngoài.
-- [ ] Nhập danh mục, từ khóa, pricing, khu vực phục vụ, và thông tin liên hệ.
+- [x] Xác nhận tên thương mại, tagline, mô tả ngắn, mô tả chi tiết, privacy/security answers trong `docs/app-store-listing.md`.
+- [x] Chuẩn bị icon raster 512×512 tại `marketing/app-icon-512.png`.
+- [x] Chuẩn bị screenshot dashboard ở light/dark và mobile/desktop tại `marketing/screenshots/`.
+- [x] Kiểm tra không cam kết sync đa thiết bị, backup, collaboration, hoặc tích hợp lịch ngoài.
+- [ ] Nhập danh mục, từ khóa, pricing, khu vực phục vụ, và thông tin liên hệ trên Partner Dashboard.
 
 ### 5. Privacy and security
 
-- [ ] Xác nhận app không thu thập hay truyền Shopify merchant data.
-- [ ] Nhập Privacy Policy URL từ `/privacy`.
-- [ ] Nhập Support URL từ `/support`.
-- [ ] Xác nhận không lưu access token vào `localStorage`.
-- [ ] Hoàn thành các câu hỏi privacy/security review theo dữ liệu thực tế của app.
+- [x] Xác nhận app không thu thập hay truyền Shopify merchant data.
+- [x] Xác nhận Privacy Policy URL từ `/privacy` hoạt động công khai.
+- [x] Xác nhận Support URL từ `/support` hoạt động công khai.
+- [x] Xác nhận không lưu access token vào `localStorage`.
+- [x] Chuẩn bị câu trả lời privacy/security review theo dữ liệu thực tế của app.
 
 ### 6. Release gate
 
