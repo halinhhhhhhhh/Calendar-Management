@@ -38,6 +38,12 @@ npx shopify app build -c calendar-management
 
 Sau đó mở URL app từ Shopify admin trên store kiểm thử, chạy chính các luồng trong `docs/test-flows.md`.
 
+## Release evidence
+
+- **2026-09-01:** `calendar-management-6` released successfully through Shopify CLI and is the active version for users.
+- **Version link:** https://dev.shopify.com/dashboard/230488811/apps/414893080577/versions/1111417880577
+- **App Store listing:** not yet submitted for public distribution.
+
 ## Giới hạn hiện tại
 
 - Dữ liệu người dùng chỉ nằm trong `localStorage` của trình duyệt, chưa đồng bộ theo tài khoản Shopify hoặc nhiều thiết bị.
